@@ -1,4 +1,4 @@
-# 🍷 Red Wine Quality Prediction
+# Red Wine Quality Prediction
 
 This project is a Bayesian analysis of the **Vinho Verde red wine dataset**, aiming to predict wine quality based on its physicochemical properties. It is built using Python and Stan (via `cmdstanpy`), and structured for reproducible analysis inside a Dockerized environment.
 
