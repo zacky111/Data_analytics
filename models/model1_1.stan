@@ -1,22 +1,22 @@
 data {
-    int<lower=0> N;                  // liczba obserwacji
-    int<lower=0> K;                  // liczba predyktorów (cech)
-    matrix[N, K] X;                  // macierz predyktorów
-    vector[N] y;                     // wektor odpowiedzi (quality)
+    int<lower=0> N;                  // number of observations
+    int<lower=0> K;                  // number of predictors (features)
+    matrix[N, K] X;                  // predictor matrix
+    vector[N] y;                     // response vector (quality)
 }
 
 parameters {
-    real alpha;                      // wyraz wolny (intercept)
-    vector[K] beta;                  // współczynniki regresji
-    real<lower=0> sigma;             // odchylenie standardowe błędu
+    real alpha;                      // intercept
+    vector[K] beta;                  // regression coefficients
+    real<lower=0> sigma;             // standard deviation of the error
 }
 
 model {
-    // Priory
-    alpha ~ normal(0, 1);            // wyraz wolny
-    beta ~ normal(0, 1);             // współczynniki regresji
+    // Priors
+    alpha ~ normal(0, 1);            // intercept
+    beta ~ normal(0, 1);             // regression coefficients
     sigma ~ exponential(1);          // sigma > 0
 
-    // Model regresji
+    // Regression model
     y ~ normal(X * beta + alpha, sigma);
 }

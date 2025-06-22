@@ -1,8 +1,8 @@
 data {
-  int<lower=0> N;
-  int<lower=0> K;
-  matrix[N, K] X;
-  vector[N] y;
+  int<lower=0> N;             // number of observations
+  int<lower=0> K;             // number of predictors (features)
+  matrix[N, K] X;             // predictor matrix
+  vector[N] y;                // response vector (quality)
 }
 
 parameters {
@@ -12,7 +12,7 @@ parameters {
 }
 
 model {
-  // Priory (bardziej elastyczne niż w model1_2)
+  // Priors (more flexible than in 1_2)
   alpha ~ normal(5.5, 1.5);
   beta ~ normal(0, 1);
   sigma ~ exponential(0.5);
