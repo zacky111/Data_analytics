@@ -14,4 +14,6 @@ model {
   alpha ~ normal(5.5, 1.0);     // Środek typowej jakości
   beta ~ normal(0, 0.5);        // Współczynniki trzymane blisko 0
   sigma ~ normal(0, 1) T[0,];   // Lepsze niż exponential, ograniczone do >0
+
+  y ~ normal(X * beta + alpha, sigma);
 }
