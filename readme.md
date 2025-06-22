@@ -40,8 +40,8 @@ cd /projekt
 git clone <your-repo-url> .
 ```
 
-2. **Make sure the dataset is in place**:
-Place the CSV file here:  
+2. **Make sure the dataset is in place** (place the CSV file here):
+ 
 `/projekt/data/winequality-red.csv`
 
 > If not present, you can download it from:  
